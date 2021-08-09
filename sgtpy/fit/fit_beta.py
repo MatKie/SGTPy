@@ -52,6 +52,8 @@ def fobj_beta(
         tenb[i] = sol.tension
     fo = np.mean((1 - tenb / iftexp) ** 2)
 
+    print(f"{tenb = }")
+    print(f"{iftexp = }")
     print(f"{fo = }")
     print(f"{beta = }")
     return fo
