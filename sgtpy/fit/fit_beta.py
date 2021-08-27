@@ -40,7 +40,7 @@ def fobj_beta(
             )
             n += 5
             rho0 = sol
-            loop_bool = not sol.success or n < 31
+            loop_bool = not sol.success or n < 51
 
         if not sol.success:
             warnings.warn(

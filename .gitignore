@@ -23,6 +23,8 @@ examples/.ipynb_checkpoints/
 
 *.pyc
 *.pyo
+*.pdf
+*.png
 
 #Python Compiled#
 #################
