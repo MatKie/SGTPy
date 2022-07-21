@@ -30,17 +30,17 @@ def fobj_beta(
             eos = saftvrmie(mixture)
             bij = np.array([[0, beta], [beta, 0]])
             eos.beta_sgt(bij)
-        n = 20
+        k = 20
         loop_bool = True
         # Increase number of colocation points twice by 5 to increase poss.
         # to converge.
         while loop_bool:
             sol = sgt_mix(
-                rho1[i], rho2[i], T[i], P[i], eos, rho0=rho0, n=n, full_output=True
+                rho1[i], rho2[i], T[i], P[i], eos, rho0=rho0, n=k, full_output=True
             )
-            n += 5
+            k += 5
             rho0 = sol
-            loop_bool = not sol.success or n < 51
+            loop_bool = not sol.success and k < 51
 
         if not sol.success:
             warnings.warn(
